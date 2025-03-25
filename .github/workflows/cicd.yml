@@ -137,8 +137,10 @@ jobs:
         else
           echo "AWS CLI already installed. Checking version..."
           aws --version
-          echo "Updating AWS CLI using package manager..."
-          sudo apt-get update -y && sudo apt-get install --only-upgrade awscli -y
+          echo "Updating AWS CLI using official installer..."
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip -o awscliv2.zip
+          sudo ./aws/install --update
         fi
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
