@@ -118,7 +118,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: skillfullsky/bankapp:latest
+        tags: skillfullsky/bankapp:latest #update image name
         file: ./Dockerfile
 
   deploy_to_kubernetes:
